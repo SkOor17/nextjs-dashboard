@@ -16,6 +16,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     const params = new URLSearchParams(searchParams)
     params.set('page', '1');
     // si term n'est pas vide, on ajoute query dans l'URL sinon on le supprime
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     term ? params.set('query', term) : params.delete('query')      
     replace(`${pathname}?${params.toString()}`)
   }, 300);
